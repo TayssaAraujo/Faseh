@@ -13,16 +13,14 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Sistema de Controle de Estacionamento - Faseh");
 
-        // Teste inicial de conexão
         try {
-            // Tentar qualquer operação de DAO para verificar a conexão
             service.consultarStatus();
             System.out.println("Conexão com o MySQL bem-sucedida.");
         } catch (SQLException e) {
             System.err.println("\nERRO FATAL: Falha ao conectar ao banco de dados.");
             System.err.println("Por favor, verifique o DbConnection.java e as credenciais do MySQL.");
             System.err.println("Detalhes do erro: " + e.getMessage());
-            return; // Encerra o programa
+            return;
         }
 
         int opcao = 0;
@@ -30,7 +28,7 @@ public class Main {
             exibirMenu();
             try {
                 opcao = scanner.nextInt();
-                scanner.nextLine(); // Consumir a nova linha
+                scanner.nextLine();
 
                 switch (opcao) {
                     case 1:
@@ -50,7 +48,7 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.err.println("Entrada inválida. Por favor, digite um número.");
-                scanner.nextLine(); // Limpa o buffer
+                scanner.nextLine();
                 opcao = 0;
             }
         }
@@ -97,7 +95,6 @@ public class Main {
 
         try {
             String resultado = service.registrarEntrada(veiculo);
-            // Simula a exibição formatada da resposta da "API"
             System.out.println("\n--- RESPOSTA DA OPERAÇÃO ---\n" + resultado + "\n----------------------------");
         } catch (SQLException e) {
             System.err.println("Erro ao interagir com o banco de dados: " + e.getMessage());
@@ -124,8 +121,6 @@ public class Main {
 
         try {
             String jsonCobranca = service.registrarSaidaECalcularPagamento(placa, usuarioSaida);
-
-            // Simula a exibição formatada da resposta JSON de cobrança
             if (jsonCobranca.contains("\"status\": \"erro\"")) {
                 System.err.println("\n--- ERRO NA SAÍDA ---\n" + jsonCobranca + "\n-----------------------");
             } else {
