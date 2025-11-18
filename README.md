@@ -1,13 +1,13 @@
 
-# Sistema de Estacionamento (Java/MySQL)
+# Sistema de Estacionamento Faseh
 
- Sistema simples de controle de estacionamento feito em Java (JDBC) com dados armazenados no banco MySQL, com operações são feitas via terminal.
+ Sistema simples de controle de estacionamento feito em Java com dados armazenados no banco Mysql, com operações são feitas via terminal.
 
 1.  Entrada: Registra o carro e a hora atual.
 2.  Consulta: Mostra quantos carros estão e quantas vagas faltam.
 3.  Saída e Cobrança: Calcula o valor a pagar.
 
-### 1\. Banco de Dados (MySQL)
+### 1\. Banco de Dados
 
 ```sql
 -- Crie o banco
