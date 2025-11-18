@@ -1,11 +1,11 @@
 
 # Sistema de Estacionamento (Java/MySQL)
 
- Sistema simples de controle de estacionamento feito em **Java (JDBC)** com dados armazenados no banco **MySQL**, com operações são feitas via terminal.
+ Sistema simples de controle de estacionamento feito em Java (JDBC) com dados armazenados no banco MySQL, com operações são feitas via terminal.
 
-1.  **Entrada:** Registra o carro e a hora atual.
-2.  **Consulta:** Mostra quantos carros estão e quantas vagas faltam.
-3.  **Saída e Cobrança:** Calcula o valor a pagar com base no tempo de permanência (arredondado para a próxima hora) e remove o registro do banco.
+1.  Entrada: Registra o carro e a hora atual.
+2.  Consulta: Mostra quantos carros estão e quantas vagas faltam.
+3.  Saída e Cobrança: Calcula o valor a pagar.
 
 ### 1\. Banco de Dados (MySQL)
 
