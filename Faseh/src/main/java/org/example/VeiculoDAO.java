@@ -8,12 +8,6 @@ import java.util.List;
 
 public class VeiculoDAO {
 
-    /**
-     * Insere um novo veículo no estacionamento.
-     * @param veiculo O objeto Veiculo a ser inserido.
-     * @return true se a inserção for bem-sucedida.
-     * @throws SQLException se ocorrer um erro de banco de dados.
-     */
     public boolean registrarEntrada(Veiculo veiculo) throws SQLException {
         String sql = "INSERT INTO veiculos (placa, modelo, marca, tipo, vaga_ocupada, usuario_registro) VALUES (?, ?, ?, ?, ?, ?)";
         Connection conn = null;
@@ -56,8 +50,6 @@ public class VeiculoDAO {
                 veiculo.setModelo(rs.getString("modelo"));
                 veiculo.setMarca(rs.getString("marca"));
                 veiculo.setTipo(rs.getString("tipo"));
-
-                // Converte Timestamp do banco para LocalDateTime do Java
                 Timestamp ts = rs.getTimestamp("hora_entrada");
                 veiculo.setHoraEntrada(ts.toLocalDateTime());
 
@@ -65,7 +57,7 @@ public class VeiculoDAO {
                 veiculo.setUsuarioRegistro(rs.getString("usuario_registro"));
                 return veiculo;
             }
-            return null; // Não encontrado
+            return null; 
 
         } finally {
             if (rs != null) rs.close();
@@ -148,4 +140,5 @@ public class VeiculoDAO {
             DbConnection.closeConnection(conn);
         }
     }
+
 }
