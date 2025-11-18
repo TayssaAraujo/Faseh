@@ -31,3 +31,5 @@ CREATE TABLE veiculos (
 private static final String USER = "seu_usuario";
 private static final String PASSWORD = "sua_senha";
 ```
+### 3\. testada conexão pelo Dbeaver
+<img width="1488" height="624" alt="image" src="https://github.com/user-attachments/assets/ae529213-d97f-4d16-b478-7fe28665fc90" />
