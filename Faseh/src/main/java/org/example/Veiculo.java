@@ -12,11 +12,9 @@ public class Veiculo {
     private String vagaOcupada;
     private String usuarioRegistro;
 
-    // Construtor
     public Veiculo() {
     }
 
-    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -88,4 +86,5 @@ public class Veiculo {
                 placa, modelo, tipo, horaEntrada.toLocalTime().toString().substring(0, 8), vagaOcupada
         );
     }
+
 }
